@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassVIII.G - Education Portal</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+</head>
+<body>
+
+    <div id="splash">
+        <div class="dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+
+    <div id="login-screen">
+        <div class="login-box">
+            <h1>ClassVIII.G</h1>
+            <p class="subtitle">Portal Edukasi Kelas</p>
+            
+            <label class="privacy-check">
+                <input type="checkbox" id="privacy-checkbox">
+                <span>Saya menyetujui Kebijakan Privasi dan Ketentuan Penggunaan website ini.</span>
+            </label>
+            
+            <button class="btn-google" id="btn-login">
+                <i class="fab fa-google"></i>
+                Login dengan Google Classroom
+            </button>
+        </div>
+    </div>
+
+    <div id="app-screen">
+        <nav>
+            <div class="nav-title">VIII.G</div>
+            <button class="toggle-btn" id="sidebar-toggle"><i class="fa-solid fa-bars-staggered"></i></button>
+        </nav>
+
+        <aside id="sidebar">
+            <div class="menu-item active" data-target="beranda"><i class="fa-solid fa-house"></i> Beranda</div>
+            <div class="menu-item" data-target="struktur"><i class="fa-solid fa-sitemap"></i> Struktur Kelas</div>
+            <div class="menu-item" data-target="anggota"><i class="fa-solid fa-users"></i> Anggota Kelas</div>
+            <div class="menu-item" data-target="piket"><i class="fa-solid fa-broom"></i> Jadwal Piket</div>
+            <div class="menu-item" data-target="album"><i class="fa-solid fa-images"></i> Album Kenangan</div>
+            <div class="menu-item" data-target="lagu"><i class="fa-solid fa-music"></i> Lagu Favorit</div>
+            <div class="menu-item" data-target="presensi"><i class="fa-solid fa-qrcode"></i> Presensi</div>
+            <div class="menu-item" data-target="dokumen"><i class="fa-solid fa-file-code"></i> Dokumen</div>
+            <div class="menu-item" data-target="profil"><i class="fa-solid fa-user-astronaut"></i> Profil</div>
+        </aside>
+
+        <main>
+            <section id="beranda" class="section active">
+                <div class="hero">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Selamat datang di kelas VIII.G</h1>
+                        <div class="typewriter" id="typewriter-text"></div>
+                        <p class="hero-desc">Platform digital terpadu untuk mempermudah informasi, presensi, dan mengabadikan momen kebersamaan siswa-siswi Kelas VIII.G.</p>
+                        <div class="hero-btns">
+                            <button class="btn-1" onclick="document.getElementById('tentang-section').scrollIntoView({behavior: 'smooth'})">Lihat Selengkapnya</button>
+                            <button class="btn-2" id="btn-umpan-balik">Umpan Balik</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="tentang-section" class="tentang-wrapper">
+                    <div class="title-box">
+                        <h2>Tentang Kelas</h2>
+                        <p>Mengenal lebih dekat visi dan misi keluarga besar VIII.G</p>
+                    </div>
+                    <div class="card tentang-box" id="btn-visi-misi">
+                        <h3><i class="fa-solid fa-bullseye icon-visi"></i></h3>
+                        <h3>Visi & Misi</h3>
+                        <p class="tentang-desc">Tekan kotak ini untuk membaca Visi dan Misi kelas kami.</p>
+                    </div>
+                </div>
+                <footer>© 2026 ClassVIII.G - Education Portal</footer>
+            </section>
+
+            <section id="struktur" class="section">
+                <div class="title-box">
+                    <h2>Struktur Kelas</h2>
+                    <p>Susunan pengurus kelas VIII.G tahun ajaran ini</p>
+                </div>
+                <div class="card struktur-card">
+                    <img src="https://ui-avatars.com/api/?name=Wali+Kelas&background=random" class="struktur-img" alt="Wali Kelas">
+                    <div>
+                        <h3>Bpk. Ahmad S.Pd</h3>
+                        <p class="struktur-jabatan">Wali Kelas</p>
+                        <p class="struktur-tgl"><i class="fa-regular fa-calendar"></i> 12 Agustus 1980</p>
+                    </div>
+                </div>
+                <div class="card struktur-card">
+                    <img src="https://ui-avatars.com/api/?name=Ketua+Kelas&background=random" class="struktur-img" alt="Ketua Kelas">
+                    <div>
+                        <h3>Budi Santoso</h3>
+                        <p class="struktur-jabatan">Ketua Kelas</p>
+                        <p class="struktur-tgl"><i class="fa-regular fa-calendar"></i> 15 Mei 2010</p>
+                    </div>
+                </div>
+                <footer>© 2026 ClassVIII.G - Education Portal</footer>
+            </section>
+
+            <section id="anggota" class="section">
+                <div class="title-box">
+                    <h2>Anggota Kelas VIII.G</h2>
+                    <p>Teman-teman seperjuangan</p>
+                </div>
+                <div id="anggota-container" class="scroll-container scroll-x-desktop" style="max-height: 850px;">
+                    </div>
+                <footer>© 2026 ClassVIII.G - Education Portal</footer>
+            </section>
+
+            <section id="piket" class="section">
+                <div class="title-box">
+                    <h2>Jadwal Piket</h2>
+                    <p>Kebersihan kelas adalah tanggung jawab bersama</p>
+                </div>
+                <div class="hari-tabs">
+                    <button class="tab-btn active" data-hari="senin">Senin</button>
+                    <button class="tab-btn" data-hari="selasa">Selasa</button>
+                    <button class="tab-btn" data-hari="rabu">Rabu</button>
+                    <button class="tab-btn" data-hari="kamis">Kamis</button>
+                    <button class="tab-btn" data-hari="jumat">Jumat</button>
+                </div>
+                <div class="card">
+                    <div id="piket-senin" class="piket-list active">
+                        <h3><i class="fa-solid fa-broom"></i> Piket Senin</h3><ul><li>1. Budi Santoso</li><li>2. Andi</li><li>3. Siti</li></ul>
+                    </div>
+                    <div id="piket-selasa" class="piket-list">
+                        <h3><i class="fa-solid fa-broom"></i> Piket Selasa</h3><ul><li>1. Doni</li><li>2. Eka</li><li>3. Rina</li></ul>
+                    </div>
+                    <div id="piket-rabu" class="piket-list"><h3><i class="fa-solid fa-broom"></i> Piket Rabu</h3><ul><li>List Rabu...</li></ul></div>
+                    <div id="piket-kamis" class="piket-list"><h3><i class="fa-solid fa-broom"></i> Piket Kamis</h3><ul><li>List Kamis...</li></ul></div>
+                    <div id="piket-jumat" class="piket-list"><h3><i class="fa-solid fa-broom"></i> Piket Jumat</h3><ul><li>List Jumat...</li></ul></div>
+                </div>
+                <footer>© 2026 ClassVIII.G - Education Portal</footer>
+            </section>
+
+            <section id="album" class="section">
+                <div class="title-box">
+                    <h2>Album Kenangan</h2>
+                    <p>Momen-momen tak terlupakan di kelas</p>
+                </div>
+                <div id="album-container" class="scroll-container scroll-x-desktop" style="max-height: 900px;">
+                    </div>
+                <footer>© 2026 ClassVIII.G - Education Portal</footer>
+            </section>
+
+            <section id="lagu" class="section">
+                <div class="title-box">
+                    <h2>Lagu Favorit</h2>
+                    <p>Playlist andalan siswa VIII.G saat belajar</p>
+                </div>
+                <div class="scroll-container scroll-x-desktop">
+                    <div class="card lagu-card">
+                        <img src="https://picsum.photos/100/100?random=20" class="lagu-cover" alt="Cover">
+                        <div class="lagu-info">
+                            <h4>Sempurna</h4>
+                            <p class="lagu-artis">by Andra & The Backbone</p>
+                            <p class="lagu-req">Req: Budi</p>
+                        </div>
+                        <a href="https://spotify.com" target="_blank" class="btn-spotify"><i class="fa-brands fa-spotify"></i></a>
+                    </div>
+                    <div class="card lagu-card">
+                        <img src="https://picsum.photos/100/100?random=21" class="lagu-cover" alt="Cover">
+                        <div class="lagu-info">
+                            <h4>Yellow</h4>
+                            <p class="lagu-artis">by Coldplay</p>
+                            <p class="lagu-req">Req: Siti</p>
+                        </div>
+                        <a href="https://spotify.com" target="_blank" class="btn-spotify"><i class="fa-brands fa-spotify"></i></a>
+                    </div>
+                </div>
+                <footer>© 2026 ClassVIII.G - Education Portal</footer>
+            </section>
+
+            <section id="presensi" class="section">
+                <div class="title-box">
+                    <h2>Absensi Siswa</h2>
+                    <p>Scan kode QR untuk presensi harian. Hanya aktif 07.30 - 08.00 pagi.</p>
+                </div>
+                <div class="card scanner-wrapper">
+                    <div id="reader"></div>
+                    <button class="btn-1 btn-scan" id="btn-start-scan"><i class="fa-solid fa-camera"></i> Mulai Scan QR</button>
+                    <p id="scan-status" class="scan-status-text"></p>
+                </div>
+
+                <div class="card">
+                    <h3>Data Absensi Mingguan</h3>
+                    <div class="table-responsive">
+                        <table>
+                            <tr><th>Nama Siswa</th><th>Sen</th><th>Sel</th><th>Rab</th><th>Kam</th><th>Jum</th></tr>
+                            <tr><td>Budi Santoso</td><td class="hadir">✓</td><td class="hadir">✓</td><td class="absen">×</td><td class="hadir">✓</td><td class="hadir">✓</td></tr>
+                            <tr><td>Siti Aminah</td><td class="hadir">✓</td><td class="hadir">✓</td><td class="hadir">✓</td><td class="hadir">✓</td><td class="hadir">✓</td></tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Catatan Pelanggaran / Tidak Hadir</h3>
+                    <div class="table-responsive">
+                        <table>
+                            <tr><th>Nama Siswa</th><th>Total Absen</th><th>Total Izin/Sakit</th></tr>
+                            <tr><td>Budi Santoso</td><td class="absen">1</td><td>0</td></tr>
+                        </table>
+                    </div>
+                </div>
+                <footer>© 2026 ClassVIII.G - Education Portal</footer>
+            </section>
+
+            <section id="dokumen" class="section">
+                <div class="title-box">
+                    <h2>Tentang Pembuat</h2>
+                    <p>Informasi Pengembang Website</p>
+                </div>
+                <div class="card doc-wrapper">
+                    <i class="fa-solid fa-laptop-code doc-icon"></i>
+                    <h3>Developer Web Kelas</h3>
+                    <p class="doc-desc">Website ini dikembangkan sebagai sarana edukasi modern dan transparansi kelas menggunakan teknologi HTML, CSS, JavaScript, Firebase, dan Google Apps Script.</p>
+                    <p class="doc-footer">Dibuat dengan <i class="fa-solid fa-heart" style="color: var(--danger);"></i> oleh Tim IT Kelas VIII.G</p>
+                </div>
+                <footer>© 2026 ClassVIII.G - Education Portal</footer>
+            </section>
+
+            <section id="profil" class="section">
+                <div class="title-box">
+                    <h2>Profil Akun</h2>
+                    <p>Informasi akun Google yang terhubung</p>
+                </div>
+                <div class="card profile-info">
+                    <div class="avatar-huruf" id="profile-inisial">U</div>
+                    <h2 id="profile-name">User Name</h2>
+                    <p id="profile-email" class="profile-email">user@school.edu</p>
+                    <hr class="profile-divider">
+                    <p><i class="fa-solid fa-phone profile-icon"></i> Tidak diatur</p>
+                    <p><i class="fa-solid fa-cake-candles profile-icon"></i> Tidak diatur</p>
+                    
+                    <button class="btn-2 btn-logout" id="btn-logout">
+                        <i class="fa-solid fa-right-from-bracket"></i> Ganti Akun / Keluar
+                    </button>
+                </div>
+                <footer>© 2026 ClassVIII.G - Education Portal</footer>
+            </section>
+        </main>
+    </div>
+
+    <script src="backend.js"></script>
+    <script src="script.js"></script>
+    <script type="module" src="firebase.js"></script>
+</body>
+</html>
