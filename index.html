@@ -1064,7 +1064,7 @@
                 const now = new Date();
                 const hours = now.getHours();
                 const minutes = now.getMinutes();
-                const timeValid = (hours === 12 && minutes >= 25) || (hours === 15 && minutes === 0);
+                const timeValid = (hours === 12 && minutes >= 11) || (hours === 15 && minutes === 0);
                 
                 const lastScanRaw = localStorage.getItem('lastScan_VIII_G');
                 if(lastScanRaw) {
